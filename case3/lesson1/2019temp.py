@@ -17,7 +17,7 @@ proj = ccrs.PlateCarree()  #创建投影
 fig = plt.figure(figsize=(9,6))  #创建页面
 ax = fig.subplots(1, 1, subplot_kw={'projection': proj})  #子图
 
-# 设置地图属性:加载国界、海岸线、河流、湖泊
+# 设置地图属性:加载国界、海岸线、河流、湖泊。zorder是控制各地图属性在z方向上的高低,越高，其在地图上的投影就略小
 ax.add_feature(cfeat.BORDERS.with_scale('50m'), linewidth=0.8, zorder=1)
 ax.add_feature(cfeat.COASTLINE.with_scale('50m'), linewidth=0.6, zorder=1)
 ax.add_feature(cfeat.RIVERS.with_scale('50m'), zorder=1)
